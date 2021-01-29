@@ -1,0 +1,292 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #FBFBFB;
+}
+
+/* Navigation */
+
+.activeBackground{
+    background-color: black;
+    border-radius: 0 0 40px 40px;
+}
+
+.activeLogo{
+    opacity: 1;
+}
+
+.inactiveLogo{
+    opacity: 0;
+}
+
+.activeText{
+    color: #FBFBFB;
+}
+
+.activeHeader{
+    opacity: 0;
+}
+
+#movies, #news, #about{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+nav{
+    top: 0px;
+    position: fixed;
+    width: 100vw;    
+    height: 135px;
+    background-color: #FBFBFB;
+    border-radius: 0 0 100% 100%;
+    transition: all 0.5s ease;
+}
+
+ul{
+    position: absolute;
+    right: 200px;
+    margin-top: 40px;
+}
+
+li{
+    display: inline-block;
+    margin-left: 192px;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.logo{
+    display: inline;
+    position: absolute;
+    left: 132px;
+    margin-top: -8px;
+    transition: all 1s;
+}
+
+span {
+    position: relative;
+    display: block;
+}
+
+.activeTab:before, .activeTab:after {
+    content: '';
+    position: absolute;
+    width: 69%;
+    height: 5px;
+    top: 100%;
+    background: black;
+    border-radius: 8px;
+    left: 16px;
+}
+
+.inactiveTab:before, .inactiveTab:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    top: 100%;
+    margin-top: -0.5px;
+    background: black;
+    border-radius: 8px;
+}
+
+.inactiveTab:before {
+    left: 16px;
+}
+
+.inactiveTab:after {
+    right: 16px;
+    background: black;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.inactiveTab:hover:before {
+    background: black;
+    width: 69%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.inactiveTab:hover:after {
+    background: transparent;
+    width: 69%;
+    transition: 0s;
+}
+
+a{
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+
+/* Main */
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+    margin-top: 180px;
+    margin-left: 132px;
+    transition: opacity 0.25s;
+}
+
+section{
+    margin: 100px auto 64px;
+    width: 85vw;
+}
+
+/* Tags */
+
+.tags{
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+    min-width: 176px;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 34px;
+    color: white;
+    /* padding: 12px 44px 12px 44px; */
+    padding: 12px 3% 12px 3%;
+    background-color: black;
+    border-radius: 240px;
+    display: inline;
+    cursor: pointer;
+}
+
+.scifiTag{
+    min-width: 100px;
+}
+
+/* Movies */
+
+.fadeAway{
+    opacity: 0;
+}
+
+.inactiveMovie{
+    display: none;
+}
+
+.moviesContainer{
+    width: 101%;
+    text-align: center;
+    margin: 64px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 44px;
+}
+
+div{
+    transition: all 2s;  
+}
+
+.posterContainer{
+    text-align: center;
+    margin: auto;
+    width: 259px;
+    height: 346px;
+    overflow: hidden;
+    border-radius: 40px;
+    box-shadow: 0 0 32px rgba(13, 13, 13, 0.24);
+    cursor: pointer;
+    transition: all 1s;    
+}
+
+.moviePoster{
+    width: 259px;
+    z-index: 0;
+    
+}
+
+.moviePosterBorder{
+    position: absolute;
+    box-sizing:border-box;
+    border: 12px solid rgba(0, 0, 0, 0.160);
+    width: 259px;
+    height: 346px;
+    border-radius: 40px;
+    z-index: 99;
+    transition: all 1s;
+}
+
+h3{
+    text-align: center;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+
+h4{
+    text-align: center;
+    margin: -10px auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #878787;
+    padding: 12px 44px 12px 44px;
+    border-radius: 240px;
+}
+
+/* Footer */
+
+footer{
+    width: 99vw;
+    height: 80px;
+    background-color: black;
+    border-radius: 40px 40px 0 0;
+    text-align: center;
+}
+
+.footerContainer{
+    background-color: black;
+    border-radius: 40px 40px 0 0;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.footerItem{
+    color: white;
+}
+
+#footerLogo{
+    margin-top: -7px;
+    width: 172px;
+    cursor: pointer;
+}
+
+#footerText{
+    margin-top: 22px;
+    padding-left: 16px;
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
